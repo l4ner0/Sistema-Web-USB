@@ -70,7 +70,6 @@ function  usuario(ruta,controlador,op)
  
  function  Mantenimiento(ruta,controlador,op)
  {
- 
    document.form.action=ruta+"/"+controlador;
    document.form.method="POST";
    document.form.op.value=op;
