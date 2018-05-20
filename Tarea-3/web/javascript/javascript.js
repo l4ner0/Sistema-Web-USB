@@ -12,22 +12,22 @@ function  usuario(ruta,controlador,op)
          var  usuario=document.getElementById("txtusu").value;
          var  clave= document.getElementById("txtcla").value;
       
-    if(controlador=="PersonalControlador.php") 
+    if(controlador==="PersonalControlador.php") 
     {       
          var tiposuario=document.getElementById("tipousu").value;
          
-      if(tiposuario=="0")
+      if(tiposuario==="0")
       {
           alert("Seleccione el  Tipo de Usuario");
           document.getElementById("tipousu").focus();
           return;
       }
-      else if( usuario=="")
+      else if( usuario==="")
       {
           alert("Ingrese  Usuario !!!");
           document.getElementById("txtusu").focus();
           return;
-      }else if(clave=="")
+      }else if(clave==="")
       {
           alert("Ingrese  Clave !!!");
           document.getElementById("txtcla").focus();
@@ -43,12 +43,12 @@ function  usuario(ruta,controlador,op)
       
     }else
     {
-               if( usuario=="")
+               if( usuario==="")
               {
                   alert("Ingrese  Usuario !!!");
                   document.getElementById("txtusu").focus();
                   return;
-              }else if(clave=="")
+              }else if(clave==="")
               {
                   alert("Ingrese  Clave !!!");
                   document.getElementById("txtcla").focus();
@@ -110,7 +110,7 @@ document.form.submit();
 //     }else 
 //     
      
-     if(nomcar=='')
+     if(nomcar==='')
      {   alert("Ingrese el  Nombre !!!");
          document.getElementById("txtnombre").focus();
          return;           
@@ -153,6 +153,16 @@ document.form.submit();
           document.form.nombre.value=nombre;
           document.form.estado.value=estado;
           document.form.submit();    
+     
+ }
+ 
+ function  seguridad(ruta,controlador,op)
+ {
+ 
+   document.form.action=ruta+"/"+controlador;
+   document.form.method="POST";
+   document.form.op.value=op;
+    document.form.submit();    
      
  }
  

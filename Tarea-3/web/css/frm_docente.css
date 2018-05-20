@@ -1,0 +1,38 @@
+.contenido_docente{
+   padding: 50px;
+    background-color: #fff;
+    height: 800px;
+}
+.carrera_profesional,
+
+.rol,
+.docentes{
+    margin: 20px;
+}
+.form-control{
+    background: #FAFFBD;
+    margin:15px;
+}
+
+.form-group label{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: -15px;
+}
+.table{
+    border:3px solid #ddddd2;
+}
+.btns{
+    color:#fff;
+    background: #3071A9;
+    border:none;
+    padding:6px;
+    border-radius: 4px;
+}
+
+/********************CAMBIAR CONTRASEÑA*********************/
+.cambiando_passsword{
+   padding: 50px;
+    background-color: #fff;
+    height: 800px;
+}
