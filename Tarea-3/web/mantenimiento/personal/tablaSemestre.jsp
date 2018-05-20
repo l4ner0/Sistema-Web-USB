@@ -1,28 +1,36 @@
+<%-- 
+    Document   : tablaSemestre
+    Created on : 20/05/2018, 02:51:17 AM
+    Author     : Diego
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Carrera</title> 
+    <title>Semestre</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="../../css/jquery.ui.base.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
-    <link href="../../css/jquery.ui.theme.css" rel="stylesheet" type="text/css"/>          
-    <link href="../../css/style1.css" rel='stylesheet' type='text/css' />
-    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../css/responsive.bootstrap.min.css"  rel="stylesheet" type="text/css">
-    <link href="../../css/bootstrap.min_1.css"  rel="stylesheet"  >
-    <link href="../../css/estilosSemestre.css"  rel="stylesheet"  >
+    <link href="<%=request.getContextPath()%>/css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="<%=request.getContextPath()%>/css/jquery.ui.base.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
+    <link href="<%=request.getContextPath()%>/css/jquery.ui.theme.css" rel="stylesheet" type="text/css"/>          
+    <link href="<%=request.getContextPath()%>/css/style1.css" rel='stylesheet' type='text/css' />
+    <link href="<%=request.getContextPath()%>/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%=request.getContextPath()%>/css/responsive.bootstrap.min.css"  rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/css/bootstrap.min_1.css"  rel="stylesheet"  >
+    <link href="<%=request.getContextPath()%>/css/estilosSemestre.css"  rel="stylesheet"  >
     
-    <script src="../../jquery-ui/jquery.alerts.js" ></script>          
-    <script src="../../jquery-ui/jquery.js"></script>      
-    <script src="../../js/jquery.dataTables.min1.js"></script>
-    <script src="../../js/dataTables.bootstrap.min1.js"></script>
-    <script src="../../js/dataTables.responsive.min1.js"></script>
-    <script src="../../js/responsive.bootstrap.min1.js"></script>            
-    <script src="../../js/bootstrap.min1.js" ></script>       
-    <script  src="../../javascript/javascript.js"></script>
+    <script src="<%=request.getContextPath()%>/jquery-ui/jquery.alerts.js" ></script>          
+    <script src="<%=request.getContextPath()%>/jquery-ui/jquery.js"></script>      
+    <script src="<%=request.getContextPath()%>/js/jquery.dataTables.min1.js"></script>
+    <script src="<%=request.getContextPath()%>/js/dataTables.bootstrap.min1.js"></script>
+    <script src="<%=request.getContextPath()%>/js/dataTables.responsive.min1.js"></script>
+    <script src="<%=request.getContextPath()%>/js/responsive.bootstrap.min1.js"></script>            
+    <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>       
+    <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
     <script type="text/javascript">
         jQuery(function ($) {
             $('#carousel1').carousel({
@@ -51,10 +59,12 @@
     </script>         
 </head>
 <body>
+
+
     <div class="header">
         <div class="container header_top">
             <div >
-                <img src="../../imagenes/encabezado.jpg" width="100%" />        
+                <img src="<%=request.getContextPath()%>/imagenes/encabezado.jpg" width="100%" />        
             </div>   
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">       
@@ -70,7 +80,7 @@
                 <ul class="nav navbar-nav">      
                     <li class="dropdown">
                         <a href="" >
-                            <img src="../../imagenes/main.png"     alt="Ir Principal">   Principal</b>
+                            <img src="<%=request.getContextPath()%>/imagenes/main.png"     alt="Ir Principal">   Principal</b>
                         </a>        
                     </li>
                 </ul> 
@@ -78,7 +88,7 @@
                 <ul class="nav navbar-nav">      
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/mantenimiento.png"     alt="Ir Mantenimiento">  Mantenimientos <b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png"     alt="Ir Mantenimiento">  Mantenimientos <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">        
                             <li><a href="">Semestre</a></li>
@@ -99,7 +109,7 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/banco.png"     alt="Banco preguntas">Banco Preguntas<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/banco.png"     alt="Banco preguntas">Banco Preguntas<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li><a href="">Registrar Pregunta Examen Supervisado</a></li>
@@ -113,7 +123,7 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/organizacion.png"   width="18px" height="18px"  alt="Banco preguntas"></i>Organizacion<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/banco.png"   width="18px" height="18px"  alt="Banco preguntas"></i>Organizacion<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li><a href="">Registrar Estructura Examen </a></li>  
@@ -130,7 +140,7 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/banco.png"     alt="Banco preguntas">Aplicacion Examen<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/banco.png"     alt="Banco preguntas">Aplicacion Examen<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li><a href="">Realizar Calificacion Examen </a></li>
@@ -164,11 +174,11 @@
                             <img src="../../imagenes/configuracion.png"     alt="Configuracion"> Configuracion<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                 
-                            <li><a href=""><img src="../../imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
+                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
                             <li class="divider"></li>
-                            <li><a href=""><img src="../../imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
+                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><img src="../../imagenes/exit.png"     alt="Salir"> Salir</a></li>      
+                            <li><a href="#"><img src="<%=request.getContextPath()%>/imagenes/exit.png"     alt="Salir"> Salir</a></li>      
                         </ul>
                     </li>      
                 </ul> 
@@ -180,25 +190,26 @@
         <div class="row">
            <div class="cuerpo">
                 <div class="titulo-cuerpo">
-                    <h3>Mantenimiento de la Tabla Carrera Profesional</h3>  
+                    <h3>Mantenimiento de la Tabla Semestre</h3>  
                 </div>
                 <div class="btn-nuevo">
-                    <button class="btn btn-primary">
-                       <img src="../../imagenes/nuevoregistro.png" width="20" height="20">
+                    <a type="button" class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/registrarSemestre.jsp">
+                       <img src="<%=request.getContextPath()%>/imagenes/nuevoregistro.png" width="20" height="20">
                         Nuevo
-                    </button>
+                    </a>
                 </div>
                 <div class="tabla-semestre">
-                   <div class="row">
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <table id="tablaSemestre" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Codigo:</th>
                                                 <th>Nombre:</th>
-                                                 <th>Estado:</th>
+                                                <th>Fecha Inicio:</th>
+                                                <th>Fecha Fin:</th>
+                                                <th>Estado:</th>
                                                 <th>Modificar:</th>
                                                 <th>Eliminar</th>
                                             </tr>
@@ -206,120 +217,37 @@
 
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>INGENIERIA DE SISTEMAS Y AUDITORIA INFORMATICA</td>
+                                                <td>2015-I</td>
+                                                <td>2015-01-13</td>
+                                                <td>2015-07-15</td>
                                                 <td>HABILITADO</td>
                                                 <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
+                                                    <a class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/modificarSemestre.jsp" type="button">
+                                                        <img src="<%=request.getContextPath()%>/imagenes/modificarregistro.png" width="20" height="20">
                                                         Modificar
-                                                    </button>
+                                                    </a>
                                                 </td>
                                                 <td style="text-align: center">
                                                      <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
+                                                        <img src="<%=request.getContextPath()%>/imagenes/eliminarregistro.png" width="20" height="20">
                                                         Eliminar
                                                     </button>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>DERECHO</td>
+                                                <td>2015-II</td>
+                                                <td>2015-08-01</td>
+                                                <td>2016-10-01</td>
                                                 <td>HABILITADO</td>
                                                 <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
+                                                    <a class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/modificarSemestre.jsp" type="button">
+                                                        <img src="<%=request.getContextPath()%>/imagenes/modificarregistro.png" width="20" height="20">
                                                         Modificar
-                                                    </button>
+                                                    </a>
                                                 </td>
                                                 <td style="text-align: center">
                                                      <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
-                                                        Eliminar
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>PSICOLOGIA</td>
-                                                <td>HABILITADO</td>
-                                                <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
-                                                        Modificar
-                                                    </button>
-                                                </td>
-                                                <td style="text-align: center">
-                                                     <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
-                                                        Eliminar
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>INGENIERIA ELECTRONICA</td>
-                                                <td>HABILITADO</td>
-                                                <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
-                                                        Modificar
-                                                    </button>
-                                                </td>
-                                                <td style="text-align: center">
-                                                     <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
-                                                        Eliminar
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>INGENIERIA INDUSTRIAL</td>
-                                                <td>HABILITADO</td>
-                                                <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
-                                                        Modificar
-                                                    </button>
-                                                </td>
-                                                <td style="text-align: center">
-                                                     <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
-                                                        Eliminar
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>INGENIERIA AMBIENTAL</td>
-                                                <td>HABILITADO</td>
-                                                <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
-                                                        Modificar
-                                                    </button>
-                                                </td>
-                                                <td style="text-align: center">
-                                                     <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
-                                                        Eliminar
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>ADMINISTRACION</td>
-                                                <td>HABILITADO</td>
-                                                <td style="text-align: center">
-                                                    <button class="btn btn-primary">
-                                                       <img src="../../imagenes/modificarregistro.png" width="20" height="20">
-                                                        Modificar
-                                                    </button>
-                                                </td>
-                                                <td style="text-align: center">
-                                                     <button  class="btn btn-primary">
-                                                        <img src="../../imagenes/eliminarregistro.png" width="20" height="20">
+                                                        <img src="<%=request.getContextPath()%>/imagenes/eliminarregistro.png" width="20" height="20">
                                                         Eliminar
                                                     </button>
                                                 </td>
@@ -345,7 +273,7 @@
             </ul>
             <div class="clearfix"> </div>
         </div>
-    </div>
+    </div>  
     <script>
         $(document).ready(function(){
             $('#tablaSemestre').DataTable({
@@ -361,6 +289,6 @@
                
              });
         });
-    </script>    
+    </script> 
 </body>
 </html>

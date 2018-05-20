@@ -1,28 +1,35 @@
+<%-- 
+    Document   : registrarCarrera
+    Created on : 20/05/2018, 03:59:50 AM
+    Author     : Diego
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Semestre</title> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="../../css/jquery.ui.base.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
-    <link href="../../css/jquery.ui.theme.css" rel="stylesheet" type="text/css"/>          
-    <link href="../../css/style1.css" rel='stylesheet' type='text/css' />
-    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../css/responsive.bootstrap.min.css"  rel="stylesheet" type="text/css">
-    <link href="../../css/bootstrap.min_1.css"  rel="stylesheet"  >
-    <link href="../../css/estilosSemestre.css"  rel="stylesheet"  >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<%=request.getContextPath()%>/css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="<%=request.getContextPath()%>/css/jquery.ui.base.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
+    <link href="<%=request.getContextPath()%>/css/jquery.ui.theme.css" rel="stylesheet" type="text/css"/>          
+    <link href="<%=request.getContextPath()%>/css/style1.css" rel='stylesheet' type='text/css' />
+    <link href="<%=request.getContextPath()%>/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%=request.getContextPath()%>/css/responsive.bootstrap.min.css"  rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath()%>/css/bootstrap.min_1.css"  rel="stylesheet"  >
+    <link href="<%=request.getContextPath()%>/css/estilosCarrera.css"  rel="stylesheet"  >
     
-    <script src="../../jquery-ui/jquery.alerts.js" ></script>          
-    <script src="../../jquery-ui/jquery.js"></script>      
-    <script src="../../js/jquery.dataTables.min1.js"></script>
-    <script src="../../js/dataTables.bootstrap.min1.js"></script>
-    <script src="../../js/dataTables.responsive.min1.js"></script>
-    <script src="../../js/responsive.bootstrap.min1.js"></script>            
-    <script src="../../js/bootstrap.min1.js" ></script>       
-    <script  src="../../javascript/javascript.js"></script>
+    <script src="<%=request.getContextPath()%>/jquery-ui/jquery.alerts.js" ></script>          
+    <script src="<%=request.getContextPath()%>/jquery-ui/jquery.js"></script>      
+    <script src="<%=request.getContextPath()%>/js/jquery.dataTables.min1.js"></script>
+    <script src="<%=request.getContextPath()%>/js/dataTables.bootstrap.min1.js"></script>
+    <script src="<%=request.getContextPath()%>/js/dataTables.responsive.min1.js"></script>
+    <script src="<%=request.getContextPath()%>/js/responsive.bootstrap.min1.js"></script>            
+    <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>       
+    <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
     <script type="text/javascript">
         jQuery(function ($) {
             $('#carousel1').carousel({
@@ -54,9 +61,9 @@
     <div class="header">
         <div class="container header_top">
             <div >
-                <img src="../../imagenes/encabezado.jpg" width="100%" />        
+                <img src="<%=request.getContextPath()%>/imagenes/encabezado.jpg" width="100%" />        
             </div>   
-            <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">       
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Desplegar navegación</span>
@@ -70,7 +77,7 @@
                 <ul class="nav navbar-nav">      
                     <li class="dropdown">
                         <a href="" >
-                            <img src="../../imagenes/main.png"     alt="Ir Principal">   Principal</b>
+                            <img src="<%=request.getContextPath()%>/imagenes/main.png"     alt="Ir Principal">   Principal</b>
                         </a>        
                     </li>
                 </ul> 
@@ -78,7 +85,7 @@
                 <ul class="nav navbar-nav">      
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/mantenimiento.png"     alt="Ir Mantenimiento">  Mantenimientos <b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png"     alt="Ir Mantenimiento">  Mantenimientos <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">        
                             <li><a href="">Semestre</a></li>
@@ -99,7 +106,7 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/banco.png"     alt="Banco preguntas">Banco Preguntas<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/banco.png"     alt="Banco preguntas">Banco Preguntas<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li><a href="">Registrar Pregunta Examen Supervisado</a></li>
@@ -113,7 +120,7 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/organizacion.png"   width="18px" height="18px"  alt="Banco preguntas"></i>Organizacion<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/banco.png"   width="18px" height="18px"  alt="Banco preguntas"></i>Organizacion<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li><a href="">Registrar Estructura Examen </a></li>  
@@ -130,7 +137,7 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/banco.png"     alt="Banco preguntas">Aplicacion Examen<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/banco.png"     alt="Banco preguntas">Aplicacion Examen<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li><a href="">Realizar Calificacion Examen </a></li>
@@ -144,12 +151,12 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/candado1.png"     alt="Configuracion">Seguridad<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/candado1.png"     alt="Configuracion">Seguridad<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                    
                             <li>
                                 <a href="">
-                                    <img src="../../imagenes/gestionarusuarios.png"  width="35px" height="35px"   alt="Gestionar Usuario y Privilegios">Gestionar Usuario
+                                    <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png"  width="35px" height="35px"   alt="Gestionar Usuario y Privilegios">Gestionar Usuario
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y Privilegios
                                 </a>
                             </li>
@@ -161,29 +168,29 @@
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../imagenes/configuracion.png"     alt="Configuracion"> Configuracion<b class="caret"></b>
+                            <img src="<%=request.getContextPath()%>/imagenes/configuracion.png"     alt="Configuracion"> Configuracion<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                 
-                            <li><a href=""><img src="../../imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
+                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
                             <li class="divider"></li>
-                            <li><a href=""><img src="../../imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
+                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><img src="../../imagenes/exit.png"     alt="Salir"> Salir</a></li>      
+                            <li><a href="#"><img src="<%=request.getContextPath()%>/imagenes/exit.png"     alt="Salir"> Salir</a></li>      
                         </ul>
                     </li>      
                 </ul> 
             </div>
         </nav>
-        </div>
     </div>
+</div>
     <div class="container">
         <div class="row">
            <div class="cuerpo">
                 <div class="titulo-cuerpo">
-                    <h3>Mantenimiento de la Tabla Semestre</h3>
-                    <h3>Editar Semestre</h3>  
+                    <h3>Mantenimiento de la Tabla Carrera</h3>
+                    <h3>Registrar Carrera</h3>  
                 </div>
-                <div class="registro-semestre">
+                <div class="registro-carrera">
                    <br><br>
                     <form role="form">
                         <div class="form-group">
@@ -192,19 +199,20 @@
                         </div>
                         <div class="form-group">
                             <label for="txtNombre">Nombre</label>
-                            <input type="text" class="form-control" id="txtNombre" value="2015-I">
+                            <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre...">
                         </div>
                          <div class="form-group">
-                            <label for="txtFechaInicio">Fecha Inicio</label>
-                            <input type="text" class="form-control" id="txtFechaInicio" value="2015-01-13">
-                        </div>
-                         <div class="form-group">
-                            <label for="txtFechaFin">Fecha Fin</label>
-                            <input type="text" class="form-control" id="txtFechaFin" value="2015-07-15">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox"> Habilitado
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="botones-registrar">
-                            <button type="submit" class="btn btn-primary">Editar</button>
-                            <button type="submit" class="btn btn-primary">Salir</button>
+                             <a type="button" class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/tablaCarrera.jsp">Grabar</a>
+                            <a type="button" class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/tablaCarrera.jsp">Salir</a>
                         </div>
                     </form>
                     <br><br>

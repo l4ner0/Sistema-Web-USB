@@ -80,8 +80,8 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento<b class="caret"></b></a>
                                 <ul class="dropdown-menu">                               
-                                    <li><a href="">Semestre</a></li>
-                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',)">Carrera Profesional</a></li>
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',4)">Semestre</a></li>
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',5)">Carrera Profesional</a></li>
                                     <li><a href="">Alumno</a></li>
                                     <li><a href="">Docente</a></li>
                                     <li><a href="">Materia</a></li>

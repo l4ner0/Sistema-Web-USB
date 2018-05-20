@@ -50,6 +50,17 @@ public class PersonalServlet extends HttpServlet {
                 pagina="/Seguridad/Gestio_user_privi.jsp";
                 break;
             }
+            case 4:
+            {
+                pagina="/mantenimiento/personal/tablaSemestre.jsp";
+                break;
+            }
+            case 5:
+            {
+                pagina="/mantenimiento/personal/tablaCarrera.jsp";
+                break;
+            }
+            
         }
         getServletContext().getRequestDispatcher(pagina).forward(request, response);
     }

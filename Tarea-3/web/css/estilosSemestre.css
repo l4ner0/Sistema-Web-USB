@@ -1,0 +1,33 @@
+.cuerpo{
+    background: white;
+}
+
+h1,h2,h3,h4{
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+}
+.titulo-cuerpo{
+	background:#C8E5F3;
+    color: #09557B;
+}
+
+.btn-nuevo{
+    background: white;
+    padding: 20px;
+}
+
+.tabla-semestre{
+    border: 1px solid #C8E5F3;
+    background: white;
+}
+
+.registro-semestre{
+    padding: 50px 150px;
+    align-content: center;
+}
+
+.botones-registrar{
+    text-align: center;
+}
+
