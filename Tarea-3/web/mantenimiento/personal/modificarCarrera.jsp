@@ -1,8 +1,4 @@
-<%-- 
-    Document   : modificarCarrera
-    Created on : 20/05/2018, 04:06:35 AM
-    Author     : Diego
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -48,7 +44,7 @@
                     var current = $('.nav li.active');
                     current.removeClass('active').next().addClass('active');
                     var id = parseInt(current.data('slide-to'));
-                    if (count == id) {
+                    if (count === id) {
                         $('.nav li').first().addClass('active');
                     }
                 }
@@ -58,6 +54,8 @@
     </script>         
 </head>
 <body>
+    <form name="form">
+        <input type="hidden" name="op">
     <div class="header">
         <div class="container header_top">
             <div >
@@ -76,7 +74,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">     
                 <ul class="nav navbar-nav">      
                     <li class="dropdown">
-                        <a href="" >
+                        <a href="<%=request.getContextPath()%>/index.jsp" >
                             <img src="<%=request.getContextPath()%>/imagenes/main.png"     alt="Ir Principal">   Principal</b>
                         </a>        
                     </li>
@@ -88,8 +86,8 @@
                             <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png"     alt="Ir Mantenimiento">  Mantenimientos <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">        
-                            <li><a href="">Semestre</a></li>
-                            <li><a href="">Carrera Profesional</a></li>
+                            <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',7)">Semestre</a></li>
+                            <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',8)">Carrera Profesional</a></li>
                             <li><a href="">Alumno</a></li>
                             <li><a href="">Docente</a></li>
                             <li><a href="">Materia</a></li>
@@ -155,7 +153,7 @@
                         </a>
                         <ul class="dropdown-menu">                    
                             <li>
-                                <a href="">
+                                <a href="javascript:seguridad('<%=request.getContextPath()%>','PersonalServlet',3)">
                                     <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png"  width="35px" height="35px"   alt="Gestionar Usuario y Privilegios">Gestionar Usuario
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y Privilegios
                                 </a>
@@ -171,9 +169,9 @@
                             <img src="<%=request.getContextPath()%>/imagenes/configuracion.png"     alt="Configuracion"> Configuracion<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                 
-                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
+                            <li><a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',4)"><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
                             <li class="divider"></li>
-                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
+                            <li><a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',5)"><img src="<%=request.getContextPath()%>/imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><img src="<%=request.getContextPath()%>/imagenes/exit.png"     alt="Salir"> Salir</a></li>      
                         </ul>
@@ -231,6 +229,7 @@
             </ul>
             <div class="clearfix"> </div>
         </div>
-    </div>   
+    </div> 
+</form>
 </body>
 </html>

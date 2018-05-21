@@ -70,6 +70,7 @@ function  usuario(ruta,controlador,op)
  
  function  Mantenimiento(ruta,controlador,op)
  {
+ 
    document.form.action=ruta+"/"+controlador;
    document.form.method="POST";
    document.form.op.value=op;
@@ -139,30 +140,37 @@ document.form.submit();
      
  }
  
- 
- 
- 
- 
- function  modificar(ruta,controlador,op,codigo,nombre,estado)
- {
-          document.form.action=ruta+"/"+controlador;
-          document.form.method="POST";
-          document.form.op.value=op;
-          document.form.codigo.value=codigo;
-          document.form.nombre.value=nombre;
-          document.form.estado.value=estado;
-          document.form.submit();    
-     
- }
- 
  function  seguridad(ruta,controlador,op)
  {
  
    document.form.action=ruta+"/"+controlador;
    document.form.method="POST";
    document.form.op.value=op;
+   document.form.submit();    
+     
+ }
+ function configuracion(ruta,controlador,op)
+ {
+     document.form.action=ruta+"/"+controlador;
+     document.form.method="POST";
+     document.form.op.value=op;
+     document.form.submit();
+ }
+ 
+  function  gestion(ruta,controlador,op)
+ {
+   document.form.action=ruta+"/"+controlador;
+   document.form.method="POST";
+   document.form.op.value=op;
     document.form.submit();    
      
+ }
+ function configEstudiante(ruta,controlador,op)
+ {
+    document.form.action=ruta+"/"+controlador;
+   document.form.method="POST";
+   document.form.op.value=op;
+    document.form.submit();   
  }
  
  

@@ -25,6 +25,8 @@
         <title>GESTIÓN DE USUARIOS Y PRIVILEGIOS</title>
     </head>
     <body>
+        <form name="form">
+            <input type="hidden" name="op">
         <div class="wrapper">
             <div class="container header_top">
                 <img src="<%=request.getContextPath()%>/imagenes/encabezado.jpg" width="100%"/>               
@@ -40,53 +42,48 @@
                     <div class="collapse navbar-collapse navbar-exl-collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
+                                <a href="<%=request.getContextPath()%>/index.jsp">
                                     <img src="<%=request.getContextPath()%>/imagenes/main.png" alt="Ir Principal"/>Principal
                                 </a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Semestre</a></li>
-                                    <li><a href="#">Carrera Profesional</a></li>
-                                    <li><a href="#">Alumno</a></li>
-                                    <li><a href="#">Docente</a></li>
-                                    <li><a href="#">Materia</a></li>
-                                    <li><a href="#">UNnidad Tematica</a></li>
-                                    <li><a href="#">Tema</a></li>
-                                    <li><a href="#">Tipo Examen</a></li>
-                                    <li><a href="#">Rol</a></li>
-                                    <li><a href="#">Nivel Dificultad</a></li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento<b class="caret"></b></a>
+                                <ul class="dropdown-menu">                               
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',7)">Semestre</a></li>
+                                     <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',8)">Carrera Profesional</a></li>
+                                    <li><a href="">Alumno</a></li>
+                                    <li><a href="">Docente</a></li>
+                                    <li><a href="">Materia</a></li>
+                                    <li><a href="">UNnidad Tematica</a></li>
+                                    <li><a href="">Tema</a></li>
+                                    <li><a href="">Tipo Examen</a></li>
+                                    <li><a href="">Rol</a></li>
+                                    <li><a href="">Nivel Dificultad</a></li>                                                                                                  
                                 </ul>
-                            </li>
+                            </li>                              
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/candado1.png" alt="Ir Seguridad"/>Seguridad
-                                </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/candado1.png" alt="Ir Seguridad"/>Seguridad<b class="caret"></b></a>                          
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" alt=""/>>Gestionar Usuario y Privilegios</a></li>                          
+                                    <li><a href="javascript:seguridad('<%=request.getContextPath()%>','PersonalServlet',3)"><img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" style="width:30px;height: auto"/>Gestionar Usuario y Privilegios</a></li>                          
                                 </ul>
                             </li>                            
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/configuracion.png" alt="Ir Configuración"/>Configuración
-                                </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/configuracion.png"    >Configuracion <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" alt=""/>>Actualizar Información</a></li>                                    
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>>Cambiar Contraseña</a></li>
-                                    <br>
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/exit.png" alt=""/>>Salir</a></li>                                   
+                                    <li>
+                                        <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',4)"><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"/>Actualizar Informacion</a>                                
+                                    </li>
+                                    <li>                                
+                                      <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',5)"><img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>Cambiar Contraseña</a>                                  
+                                    </li>                           
                                 </ul>
-                            </li>                            
+                            </li>                                
                         </ul>
                      </div>
                 </nav>
@@ -131,8 +128,8 @@
                                     <p>Direccion :<textarea class="form-control" rows="3" >Jr. Direccion del lugar</textarea></p>
                                     
                                     <div>
-                                    <button type="button" class="btn btn-primary btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px; margin-left:40%"><p style="text-align:center">Actualizar Datos</p></button>
-                                    <button type="button" class="btn btn-default btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px"><p style="text-align:center"><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Salir</p></button>
+                                    <a type="button" class="btn btn-primary btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px; margin-left:40%"><p style="text-align:center">Actualizar Datos</p></a>
+                                    <a type="button" class="btn btn-default btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px" href="<%=request.getContextPath()%>/index.jsp>"><p style="text-align:center"><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Salir</p></a>
                                 </div>
                                     </div>
                                 
@@ -147,6 +144,7 @@
                 </ul>
             </div>
         </div>
+        </form>
     </body>
 </html>
                                  

@@ -1,8 +1,4 @@
-<%-- 
-    Document   : registrarSemestre
-    Created on : 20/05/2018, 03:13:04 AM
-    Author     : Diego
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,6 +26,34 @@
     <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>       
     <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
     <script type="text/javascript">
+        function registro(){
+                
+                 var nombre= document.getElementById("nombre");
+                 var inicio= document.getElementById("inicio");
+                 var fin= document.getElementById("fin");        
+                 var nombre=nombre.options[nombre.selectedIndex].value;
+                 var inicio=inicio.options[inicio.selectedIndex].value;
+                 var fin=fin.options[fin.selectedIndex].value;
+                 if(nombre===""){
+                    alert("Ingrese  Nombre!!!");
+                    document.getElementById("txtnombre").focus();
+                    return;
+                    }else if(inicio===""){                   
+                    alert("Ingrese  Fecha Inicio!!!");
+                    document.getElementById("txtinicio").focus();
+                    return;
+                    }else if(fin===""){
+                        alert("Ingrese Fecha Final");
+                        document.getElementById("txtfin").focus();
+                    }
+                     else {
+                        document.form.action=ruta+"/"+controlador;
+                        document.form.method="get";
+                        document.form.docentes.value=inicio;
+                        document.form.submit();  
+                    }
+        }
+        
         jQuery(function ($) {
             $('#carousel1').carousel({
                 interval: 10000
@@ -47,7 +71,7 @@
                     var current = $('.nav li.active');
                     current.removeClass('active').next().addClass('active');
                     var id = parseInt(current.data('slide-to'));
-                    if (count == id) {
+                    if (count === id) {
                         $('.nav li').first().addClass('active');
                     }
                 }
@@ -77,7 +101,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">     
                 <ul class="nav navbar-nav">      
                     <li class="dropdown">
-                        <a href="" >
+                        <a href="<%=request.getContextPath()%>/index.jsp">
                             <img src="<%=request.getContextPath()%>/imagenes/main.png"     alt="Ir Principal">   Principal</b>
                         </a>        
                     </li>
@@ -89,8 +113,8 @@
                             <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png"     alt="Ir Mantenimiento">  Mantenimientos <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">        
-                            <li><a href="">Semestre</a></li>
-                            <li><a href="">Carrera Profesional</a></li>
+                            <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',7)">Semestre</a></li>
+                            <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',8)">Carrera Profesional</a></li>
                             <li><a href="">Alumno</a></li>
                             <li><a href="">Docente</a></li>
                             <li><a href="">Materia</a></li>
@@ -156,7 +180,7 @@
                         </a>
                         <ul class="dropdown-menu">                    
                             <li>
-                                <a href="">
+                                <a href="javascript:seguridad('<%=request.getContextPath()%>','PersonalServlet',3)">
                                     <img src="../../imagenes/gestionarusuarios.png"  width="35px" height="35px"   alt="Gestionar Usuario y Privilegios">Gestionar Usuario
                                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y Privilegios
                                 </a>
@@ -172,9 +196,9 @@
                             <img src="../../imagenes/configuracion.png"     alt="Configuracion"> Configuracion<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">                 
-                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
+                            <li><a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',4)"><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"     alt="Configuracion"> Actualizar Informacion</a></li>
                             <li class="divider"></li>
-                            <li><a href=""><img src="<%=request.getContextPath()%>/imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
+                            <li><a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',5)"><img src="<%=request.getContextPath()%>/imagenes/llaves.png"     alt="Configuracion"> Cambiar Contraseña</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><img src="<%=request.getContextPath()%>/imagenes/exit.png"     alt="Salir"> Salir</a></li>      
                         </ul>
@@ -194,24 +218,24 @@
                 <div class="registro-semestre">
                    <br><br>
                     <form role="form">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="txtCodigo">Codigo</label>
-                            <input type="text" class="form-control" id="txtCodigo" value="3" disabled>
+                            <input type="text" class="form-control" value="3" disabled>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="txtNombre">Nombre</label>
-                            <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre...">
+                            <input type="text" class="form-control" id="nombre" name="txtnombre" placeholder="Ingrese nombre...">
                         </div>
-                         <div class="form-group">
+                         <div class="form-group" >
                             <label for="txtFechaInicio">Fecha Inicio</label>
-                            <input type="text" class="form-control" id="txtFechaInicio" placeholder="dd/mm/aaaa">
+                            <input type="text" class="form-control" id="inicio" name="txtinicio" placeholder="dd/mm/aaaa">
                         </div>
-                         <div class="form-group">
+                         <div class="form-group" >
                             <label for="txtFechaFin">Fecha Fin</label>
-                            <input type="text" class="form-control" id="txtFechaFin" placeholder="dd/mm/aaaa">
+                            <input type="text" class="form-control" id="fin" name="txtfin" placeholder="dd/mm/aaaa">
                         </div>
                         <div class="botones-registrar">
-                            <a type="button" class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/tablaSemestre.jsp">Grabar</a>
+                            <a type="button" class="btn btn-primary"  onclick="registro()">Grabar</a>
                             <a type="button" class="btn btn-primary" href="<%=request.getContextPath()%>/mantenimiento/personal/tablaSemestre.jsp">Salir</a>
                         </div>
                     </form>
@@ -231,6 +255,7 @@
             </ul>
             <div class="clearfix"> </div>
         </div>
-    </div>   
+    </div>  
+    </form>
 </body>
 </html>

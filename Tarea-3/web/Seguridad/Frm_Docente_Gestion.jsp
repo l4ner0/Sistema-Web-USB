@@ -22,10 +22,42 @@
         <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>       
         <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
         
+        <script>
+            
+            function crearuser() {               
+                 var carrera = document.getElementById("carreraProfesional");
+                 var docentes= document.getElementById("docentes");
+                 var rol= document.getElementById("rol");
+                 
+                 var carrera=carrera.options[carrera.selectedIndex].value;
+                 var docentes=docentes.options[docentes.selectedIndex].value;
+                 var rol=rol.options[rol.selectedIndex].value;
+                  if(carrera==='0'){
+                    alert("Ingrese  Carrera!!!");
+                    document.getElementById("txtcarrera").focus();
+                    return;
+                    }else if(docentes==='0'){                   
+                    alert("Ingrese  Docente!!!");
+                    document.getElementById("txtdocentes").focus();
+                    return;
+                    }else if(rol==='0'){
+                        alert("Ingrese rol");
+                        document.getElementById("txtrol").focus();
+                    }
+                     else {
+                        document.form.action=ruta+"/"+controlador;
+                        document.form.method="get";
+                        document.form.docentes.value=docentes;
+                        document.form.submit();  
+                    }
+            }
+        </script>
         <title>GESTIÓN DE USUARIOS Y PRIVILEGIOS</title>
     </head>
     <body>
-        <div class="wrapper">
+        <form name="form">
+            <input type="hidden" name="op">
+            <div class="wrapper">
             <div class="container header_top">
                 <img src="<%=request.getContextPath()%>/imagenes/encabezado.jpg" width="100%"/>               
                 <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
@@ -40,53 +72,48 @@
                     <div class="collapse navbar-collapse navbar-exl-collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
+                                <a href="<%=request.getContextPath()%>/index.jsp">
                                     <img src="<%=request.getContextPath()%>/imagenes/main.png" alt="Ir Principal"/>Principal
                                 </a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Semestre</a></li>
-                                    <li><a href="#">Carrera Profesional</a></li>
-                                    <li><a href="#">Alumno</a></li>
-                                    <li><a href="#">Docente</a></li>
-                                    <li><a href="#">Materia</a></li>
-                                    <li><a href="#">UNnidad Tematica</a></li>
-                                    <li><a href="#">Tema</a></li>
-                                    <li><a href="#">Tipo Examen</a></li>
-                                    <li><a href="#">Rol</a></li>
-                                    <li><a href="#">Nivel Dificultad</a></li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento<b class="caret"></b></a>
+                                <ul class="dropdown-menu">                               
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',7)">Semestre</a></li>
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',8)">Carrera Profesional</a></li>
+                                    <li><a href="">Alumno</a></li>
+                                    <li><a href="">Docente</a></li>
+                                    <li><a href="">Materia</a></li>
+                                    <li><a href="">UNnidad Tematica</a></li>
+                                    <li><a href="">Tema</a></li>
+                                    <li><a href="">Tipo Examen</a></li>
+                                    <li><a href="">Rol</a></li>
+                                    <li><a href="">Nivel Dificultad</a></li>                                                                                                  
                                 </ul>
-                            </li>
+                            </li>                              
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/candado1.png" alt="Ir Seguridad"/>Seguridad
-                                </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/candado1.png" alt="Ir Seguridad"/>Seguridad<b class="caret"></b></a>                          
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" alt=""/>>Gestionar Usuario y Privilegios</a></li>                          
+                                    <li><a href="javascript:seguridad('<%=request.getContextPath()%>','PersonalServlet',3)"><img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" style="width:30px;height: auto"/>Gestionar Usuario y Privilegios</a></li>                          
                                 </ul>
                             </li>                            
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/configuracion.png" alt="Ir Configuración"/>Configuración
-                                </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/configuracion.png"    >Configuracion <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" alt=""/>>Actualizar Información</a></li>                                    
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>>Cambiar Contraseña</a></li>
-                                    <br>
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/exit.png" alt=""/>>Salir</a></li>                                   
+                                    <li>
+                                        <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',4)"><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"/>Actualizar Informacion</a>                                                           
+                                    </li>
+                                    <li>                                
+                                     <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',5)"><img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>Cambiar Contraseña</a>                                 
+                                    </li>                            
                                 </ul>
-                            </li>                            
+                            </li>                                
                         </ul>
                      </div>
                 </nav>
@@ -94,44 +121,47 @@
                     
                     <div class="carrera_profesional">
                         <label class="col-sm-2 control-label">Carrera Profesional</label>
-                        <select class="form-control" style="width:80.6%; margin-left: 18%">
-                            <option>INGENIERIA DE SISTEMAS</option>
-                            <option>INGENIERIA INDUSTRIAL</option>
-                            <option>INGENIERIA CIVIL</option>
+                        <select id="carreraProfesional" name="txtcarrera"  style="width:80.6%; margin-left: 18%">
+                            <option value="0">----------------------------------</option>
+                            <option value="1">INGENIERIA DE SISTEMAS</option>
+                            <option value="2">INGENIERIA INDUSTRIAL</option>
+                            <option value="3">INGENIERIA CIVIL</option>
                         </select> 
                     </div>
                     <div class="docentes">
                         <label class="col-sm-2 control-label">Docentes</label>
-                        <select class="form-control" style="width:80.6%; margin-left: 18%">
-                            <option>IVAN PETRLIK AZABACHE</option>
-                            <option>GALLEGOS COCA CARLOS</option>
-                            <option>HUAPAYA</option>
+                        <select id="docentes" name="txtdocentes"  style="width:80.6%; margin-left: 18%">
+                            <option value="0">----------------------------------</option>
+                            <option value="1">IVAN PETRLIK AZABACHE</option>
+                            <option value="2">GALLEGOS COCA CARLOS</option>
+                            <option value="3">HUAPAYA</option>
                         </select> 
                     </div>
                     <div class="rol">
                         <label class="col-sm-2 control-label">Rol</label>
-                        <select class="form-control" style="width:80.6%; margin-left: 18%">
-                            <option>DOCENTE</option>
-                            <option>DOCENTE UNIVERSITARIO</option>
-                            <option>DOCENTE PRIVADO</option>
+                        <select id="rol" name="txtrol" style="width:80.6%; margin-left: 18%">
+                            <option value="0">----------------------------------</option>
+                            <option value="1">DOCENTE</option>
+                            <option value="2">DOCENTE UNIVERSITARIO</option>
+                            <option value="3">DOCENTE PRIVADO</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
                         <label for="inputuser" class="col-sm-2 control-label">Usuario</label>
                         <div class="col-sm-10" style="width: 81%;margin-left:-10px">
-                          <input type="text" class="form-control" id="inputuser">
+                          <input type="text" class="form-control" name="txtuser" id="inputuser">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label" >Password</label>
                         <div class="col-sm-10" style="width: 81%;margin-left:-10px">
-                          <input type="password" class="form-control" id="inputPassword3">
+                          <input type="password" class="form-control" name="txtpass" id="inputPassword3">
                         </div>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-primary btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px; margin-left:40%"><p style="text-align:center">Crear Usuario</p></button>
-                        <button type="button" class="btn btn-default btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px"><p style="text-align:center"><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Volver</p></button>
+                    <div >
+                        <a type="button" class="btn btn-primary btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px; margin-left:40%"><p style="text-align:center" onclick="crearuser()">Crear Usuario</p></a>
+                        <a type="button" class="btn btn-default btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px" href="<%=request.getContextPath()%>/Seguridad/Gestio_user_privi.jsp"><p style="text-align:center"><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Volver</p></a>
                     </div>
                     <br>
                     <div>
@@ -168,5 +198,6 @@
                 </ul>
             </div>
         </div>
+        </form>
     </body>
 </html>

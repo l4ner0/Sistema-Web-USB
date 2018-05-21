@@ -130,7 +130,7 @@
               
                 <ul class="nav navbar-nav navbar-right">
                    <li class="active">
-                        <a href="index.html">Inicio</a>
+                        <a href="<%=request.getContextPath()%>/index.jsp">Inicio</a>
                     </li>                          
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/examen1.png"    >Aplicación Examen <b class="caret"></b></a>
@@ -148,15 +148,15 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/configuracion.png"    >Configuracion <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="">Actualizar Informacion</a>                                
+                                <a href="javascript:configEstudiante('<%=request.getContextPath()%>','EstudianteServlet',3)">Actualizar Informacion</a>                                
                             </li>
                             <li>                                
-                              <a href="">Cambiar Contraseña</a>                                  
+                              <a href="javascript:configEstudiante('<%=request.getContextPath()%>','EstudianteServlet',4)">Cambiar Contraseña</a>                                  
                             </li>                            
                         </ul>
                     </li>                    
                        <li >
-                        <a href="javascript:cerrarsesionestudiante('<%=request.getContextPath()%>','EstudianteServlet',3)" ><img src="<%=request.getContextPath()%>/imagenes/configuracion.png"    >Cerrar Sesion </a>
+                        <a href="<%=request.getContextPath()%>/index.jsp"> <img src="<%=request.getContextPath()%>/imagenes/configuracion.png">Cerrar Sesion </a>
                        
                     </li>
                 </ul>

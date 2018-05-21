@@ -13,6 +13,8 @@
         <script src="<%=request.getContextPath()%>/jquery/jquery.alerts.js" ></script>        
         <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>     
         <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
+        
+        
 </head>
 <body  >
    	<div class="form-center">

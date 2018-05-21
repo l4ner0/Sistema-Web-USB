@@ -6,7 +6,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -52,15 +51,29 @@ public class PersonalServlet extends HttpServlet {
             }
             case 4:
             {
-                pagina="/mantenimiento/personal/tablaSemestre.jsp";
+                pagina="/Seguridad/Config_actualizar_datos.jsp";
                 break;
             }
             case 5:
             {
+                pagina="/Seguridad/Cambiar_contra_Gestion.jsp";
+                break;
+            }
+            case 6:
+            {
+                pagina="/index.jsp";
+                break;
+            }
+            case 7:
+            {
+                pagina="/mantenimiento/personal/tablaSemestre.jsp";
+                break;
+            }
+            case 8:
+            {
                 pagina="/mantenimiento/personal/tablaCarrera.jsp";
                 break;
             }
-            
         }
         getServletContext().getRequestDispatcher(pagina).forward(request, response);
     }

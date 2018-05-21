@@ -6,7 +6,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,6 +36,21 @@ public class EstudianteServlet extends HttpServlet {
         switch(op){
             case 1:{
                 pagina="/Login/FrmLoginEstudiante.jsp";
+                break;
+            }
+            case 2:
+            {
+                pagina="/Principal/FrmPrincipalEstudiante.jsp";
+                break;
+            }
+            case 3:
+            {
+                pagina="/Estudiante/Config_estudiante.jsp";
+                break;
+            }
+            case 4:
+            {
+                pagina="/Estudiante/config_contra_estudia.jsp";
                 break;
             }
         }

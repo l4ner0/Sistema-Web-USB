@@ -21,45 +21,16 @@
         <script src="<%=request.getContextPath()%>/js/responsive.bootstrap.min1.js"></script>            
         <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>       
         <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
-        <script type="text/javascript">
-            jQuery(function ($)
-            {
-                 $('#carousel1').carousel
-                 (
-                     {
-                         interval:1000
-                     }
-                 );
-                 var clickEvent= false;
-                 $('#corousel1').on('click', '.nav a' , function()
-                 {
-                     clickEvent= true;
-                     $('.nav li').removeClass('active');
-                     $(this).parent().addClass('active');
-                 }).on('slid.bs.carousel',function(e){
-                     if(!clickEvent){
-                         var count= $('.nav').children().lenght - 1;
-                         var current= $('.nav.li.active');
-                         current.removeClass('active').next().addClass('active');
-                         var id=parseInt(current.data('slide-to'));
-                         if(count === id)
-                         {
-                             $('.nav li').first().addClass('active');
-                         }
-                    }
-                         clickEvent= false;
-                     });
-            });
-        </script>
-        <title>Formulario Principal Personal</title>
+        
+        <title>GESTIÓN DE USUARIOS Y PRIVILEGIOS</title>
     </head>
     <body>
-        <form    name="form">    
-  <input type="hidden"  name="op">
-        <div class="wrapper">
+        <form name="form">
+            <input type="hidden" name="op">
+            <div class="wrapper">
             <div class="container header_top">
                 <img src="<%=request.getContextPath()%>/imagenes/encabezado.jpg" width="100%"/>               
-                 <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
+                <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-exl-collapse">
                             <span class="sr-only">Desplegar Navegación</span>
@@ -71,7 +42,7 @@
                     <div class="collapse navbar-collapse navbar-exl-collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="<%=request.getContextPath()%>/index.jsp">
+                                <a href="<%=request.getContextPath()%>/index.jsp>">
                                     <img src="<%=request.getContextPath()%>/imagenes/main.png" alt="Ir Principal"/>Principal
                                 </a>
                             </li>
@@ -106,48 +77,66 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/configuracion.png"    >Configuracion <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',4)"><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"/>Actualizar Informacion</a>                                
+                                        <a href="javascript:configEstudiante('<%=request.getContextPath()%>','EstudianteServlet',3)">Actualizar Informacion</a>                                
                                     </li>
                                     <li>                                
-                                      <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',5)"><img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>Cambiar Contraseña</a>                                  
-                                    </li>                         
+                                      <a href="">Cambiar Contraseña</a>                                  
+                                    </li>                            
                                 </ul>
                             </li>                                
                         </ul>
                      </div>
                 </nav>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div id="contenido">
-                        <div id="carousel1" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img width="100%" height="100%" src="<%=request.getContextPath()%>/imagenes/principal2.png" />
-                                    <div class="carousel-caption"></div>
-                                </div>
-                                <div class="item">
-                                    <img width="100%" height="100%" src="<%=request.getContextPath()%>/imagenes/principal3.png" />
-                                    <div class="carousel-caption">
-                                        <div class="col-lg-12 text-center v-center" style="font-size:39pt;">
-                                            <a href="#"><span class="avatar"><i class="fa fa-google-plus"></i></span></a>
-                                            <a href="#"><span class="avatar"><i class="fa fa-linkedin"></i></span></a>
-                                            <a href="#"><span class="avatar"><i class="fa fa-facebook"></i></span></a>
-                                            <a href="#"><span class="avatar"><i class="fa fa-github"></i></span></a>
-                                        </div> 
+                                <div style="background: #fff; height: 800px;padding:50px">
+                                    <div class="form-group">
+                                        <label for="inputcode" class="col-sm-2 control-label">Codigo :</label>
+                                        <div class="col-sm-10" style="width: 81%;margin-left:-10px">
+                                          <input type="text" class="form-control" id="inputcode">
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label for="inputname" class="col-sm-2 control-label">Nombre :</label>
+                                        <div class="col-sm-10" style="width: 81%;margin-left:-10px">
+                                          <input type="text" class="form-control" id="inputname">
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label for="inputapellp" class="col-sm-2 control-label">Apellido Paterno :</label>
+                                        <div class="col-sm-10" style="width: 81%;margin-left:-10px">
+                                          <input type="text" class="form-control" id="inputapellp">
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label for="inputapellm" class="col-sm-2 control-label">Apellido Materno :</label>
+                                        <div class="col-sm-10" style="width: 81%;margin-left:-10px">
+                                          <input type="text" class="form-control" id="inputapellm">
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Email :</label>
+                                        <div class="col-sm-10" style="width: 81%;margin-left:-10px">
+                                          <input type="email" class="form-control" id="inputEmail3">
+                                        </div>
                                     </div>
+                                    <div>Imagen :<input type="file"></div>
+                                    <div class="form-group">
+                                        <label for="inputnumber" class="col-sm-2 control-label">Nro Telefono :</label>
+                                        <div class="col-sm-10" style="width: 81%;margin-left:-10px">
+                                          <input type="text" class="form-control" id="inputnumber">
+                                        </div>
+                                    </div> 
+                                    <p>Direccion :<textarea class="form-control" rows="3" >Jr. Direccion del lugar</textarea></p>
+                                    
+                                    <div>
+                                    <a type="button" class="btn btn-primary btn-lg active" style="padding:5px 5px 0 5px;margin-top:50px; margin-left:40%"><p style="text-align:center">Actualizar Datos</p></a>
+                                    <a type="button" class="btn btn-default btn-lg active" href="<%=request.getContextPath()%>/index.jsp>" style="padding:5px 5px 0 5px;margin-top:50px"><p style="text-align:center"><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Salir</p></a>
                                 </div>
-                                <div class="item">
-                                    <img width="100%" height="100%" src="<%=request.getContextPath()%>/imagenes/principal1.png" />
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                </div> 
-            </div> 
+                                    </div>
+                                
+            </div>            
             <div class="container footer">
                 <div class="footer_bottom">
-                    <p>Derechos Reservados por AlumnoUNFV</p>
+                    <p>Derechos Reservados por alumnoUNFV</p>
                 </div>
                 <ul class="social">
                     <li><a href="#"> <i class="fb"></i></a></li>
@@ -158,3 +147,4 @@
         </form>
     </body>
 </html>
+                                 

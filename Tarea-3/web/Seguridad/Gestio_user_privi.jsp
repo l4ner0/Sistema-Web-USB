@@ -20,12 +20,27 @@
         <script src="<%=request.getContextPath()%>/js/dataTables.bootstrap.min1.js"></script>
         <script src="<%=request.getContextPath()%>/js/dataTables.responsive.min1.js"></script>
         <script src="<%=request.getContextPath()%>/js/responsive.bootstrap.min1.js"></script>            
-        <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>       
-        <script  src="<%=request.getContextPath()%>/javascript/javascript.js"></script>
+        <script src="<%=request.getContextPath()%>/js/bootstrap.min1.js" ></script>             
+        <script src="<%=request.getContextPath()%>/javascript/javascript.js" type="text/javascript"></script>
+        <script type="text/javascript">
+             function changeFunc() {               
+                 var op = document.getElementById("selectBox");
+                 var op=op.options[op.selectedIndex].value;
+                  if(op==='1'){
+                    location.href="<%=request.getContextPath()%>/Seguridad/Frm_Docente_Gestion.jsp";
+                    }
+                     else {
+                      location.href="#";
+                    }     
+            }
+            
+        </script>
         
         <title>GESTIÓN DE USUARIOS Y PRIVILEGIOS</title>
     </head>
     <body>
+        <form name="form">
+            <input type="hidden" name="op">
         <div class="wrapper">
             <div class="container header_top">
                 <img src="<%=request.getContextPath()%>/imagenes/encabezado.jpg" width="100%"/>               
@@ -41,68 +56,63 @@
                     <div class="collapse navbar-collapse navbar-exl-collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
+                                <a href="<%=request.getContextPath()%>/index.jsp">
                                     <img src="<%=request.getContextPath()%>/imagenes/main.png" alt="Ir Principal"/>Principal
                                 </a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Semestre</a></li>
-                                    <li><a href="#">Carrera Profesional</a></li>
-                                    <li><a href="#">Alumno</a></li>
-                                    <li><a href="#">Docente</a></li>
-                                    <li><a href="#">Materia</a></li>
-                                    <li><a href="#">UNnidad Tematica</a></li>
-                                    <li><a href="#">Tema</a></li>
-                                    <li><a href="#">Tipo Examen</a></li>
-                                    <li><a href="#">Rol</a></li>
-                                    <li><a href="#">Nivel Dificultad</a></li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/mantenimiento.png" alt="Ir Mantenimiento"/>Mantenimiento<b class="caret"></b></a>
+                                <ul class="dropdown-menu">                               
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',7)">Semestre</a></li>
+                                    <li><a href="javascript:Mantenimiento('<%=request.getContextPath()%>','PersonalServlet',8)">Carrera Profesional</a></li>
+                                    <li><a href="">Alumno</a></li>
+                                    <li><a href="">Docente</a></li>
+                                    <li><a href="">Materia</a></li>
+                                    <li><a href="">UNnidad Tematica</a></li>
+                                    <li><a href="">Tema</a></li>
+                                    <li><a href="">Tipo Examen</a></li>
+                                    <li><a href="">Rol</a></li>
+                                    <li><a href="">Nivel Dificultad</a></li>                                                                                                  
                                 </ul>
-                            </li>
+                            </li>                              
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/candado1.png" alt="Ir Seguridad"/>Seguridad
-                                </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/candado1.png" alt="Ir Seguridad"/>Seguridad<b class="caret"></b></a>                          
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" alt=""/>>Gestionar Usuario y Privilegios</a></li>                          
+                                    <li><a href="javascript:seguridad('<%=request.getContextPath()%>','PersonalServlet',3)"><img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" style="width:30px;height: auto"/>Gestionar Usuario y Privilegios</a></li>                          
                                 </ul>
                             </li>                            
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#">
-                                    <img src="<%=request.getContextPath()%>/imagenes/configuracion.png" alt="Ir Configuración"/>Configuración
-                                </a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<%=request.getContextPath()%>/imagenes/configuracion.png"    >Configuracion <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/gestionarusuarios.png" alt=""/>>Actualizar Información</a></li>                                    
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>>Cambiar Contraseña</a></li>
-                                    <br>
-                                    <li><a href="#" <img src="<%=request.getContextPath()%>/imagenes/exit.png" alt=""/>>Salir</a></li>                                   
+                                    <li>
+                                        <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',4)"><img src="<%=request.getContextPath()%>/imagenes/actualizar.png"/>Actualizar Informacion</a>                                
+                                    </li>
+                                    <li>                                
+                                      <a href="javascript:configuracion('<%=request.getContextPath()%>','PersonalServlet',5)"><img src="<%=request.getContextPath()%>/imagenes/llaves.png" alt=""/>Cambiar Contraseña</a>                                  
+                                    </li>                            
                                 </ul>
-                            </li>                            
+                            </li>                                
                         </ul>
                      </div>
-                </nav> 
+                </nav>
                 <div class="usertype">
                     <h3>Gestionar Usuario y Privilegios</h3>
                 </div>
                 <div class="Gest_user__privil">
                     <p>Tipo de Usuario:</p>
-                    <select class="form-control">
+                    <select id="selectBox" onchange="changeFunc()" style="width: 85%;padding:8px;margin-left: 100px;border-radius:10px">
                         <option>--Seleccionar Tipo de Usuario--</option>
-                        <option>Docente</option>
-                        <option>Estudiante</option>
+                        <option value="1">Docente</option>
+                        <option value="2">Estudiante</option>
                     </select>
-                    <button type="button" class="btn btn-primary" style="padding:5px 5px 0 5px;margin-top:80px; margin-left:50%">
-                        <p><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Salir</p></button>                    
+                    <a type="button" class="btn btn-primary" href="<%=request.getContextPath()%>/index.jsp" style="padding:5px 5px 0 5px;margin-top:80px; margin-left:50%">
+                        <p><img src="<%=request.getContextPath()%>/imagenes/salirdatos.png" style="width: 30px;height:25px"/>Salir</p></a>                    
                 </div>
                 
         </div>
@@ -117,5 +127,6 @@
                 </ul>
             </div>
         </div>
+    </form>
     </body>
 </html>
